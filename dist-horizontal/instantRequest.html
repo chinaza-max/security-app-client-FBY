@@ -494,7 +494,7 @@
                         <div class="card-body">
                           <div class="alert alert-secondary with-before-icon" role="alert">
                             <div class="alert-icon"><i class="icofont-edit"></i></div>
-                            <div class="alert-content">Recurring Daily; Repeat every 1 day(s); Run until: 2022-08-17; </div>
+                            <div class="alert-content"><h5 id="scheduleData">Recurring Daily; Repeat every 1 day(s); Run until: 2022-08-17;</h3> </div>
                           </div>
                         </div>
                       </div>
@@ -694,21 +694,22 @@
 <!--end Job  -->
 
 
+
 <!--start Recurring rule  -->
 <div class="modal fade" id="modal-1" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
         <i class="icofont-close-line"></i>
       </button>
 
       <div class="modal-header">
-       
+        <h5 class="modal-title">Modal title</h5>
       </div>
       <div class="modal-body">
         <div class="card">
-          <div class="card-body">
-            <ul class="nav nav-pills mb-3" role="tablist">
+          <div class="card-body" >
+            <ul class="nav nav-pills mb-2" role="tablist">
               <li class="nav-item" role="presentation">
                 <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#tab-1" type="button" role="tab" aria-selected="true">Daily</button>
               </li>
@@ -722,13 +723,14 @@
                 <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-4" type="button" role="tab" aria-selected="false">Yearly</button>
               </li>
             </ul>
-            <div class="tab-content">
+            
+            <div class="tab-content pb-5 ">
               
               <div class="tab-pane fade show active" id="tab-1" role="tabpanel">
 
-                  <div class="input-group mb-3" style="width: 250px;">
+                  <div class="input-group mb-3" style="width: 260px;">
                     <span class="input-group-text">Repeat every</span>
-                    <input type="tel" class="form-control" style="border:1px solid black;"  placeholder="1" > 
+                    <input type="tel" class="form-control interval" style="border:1px solid black;"  placeholder="1" > 
                     <span class="input-group-text">day(s)</span>
                   </div>
                   <span class="text-muted"> The event will be repeated every day or every x days, depending on the value.</span>
@@ -738,7 +740,7 @@
               <div class="tab-pane fade" id="tab-2" role="tabpanel">
                 <div class="input-group mb-3" style="width: 270px;">
                   <span class="input-group-text">Repeat every</span>
-                  <input type="tel" class="form-control" style="border:1px solid black;"  placeholder="1" > 
+                  <input type="tel" class="form-control interval" style="border:1px solid black;"  placeholder="1" > 
                   <span class="input-group-text">week(s)</span>
                 </div>
 
@@ -749,7 +751,7 @@
 
                   <div class="col-md-3">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                      <input class="form-check-input checkBox" type="checkbox" value="0">
                       <label class="form-check-label" for="defaultCheck1">
                         Sun
                       </label>
@@ -758,7 +760,7 @@
 
                   <div class="col-md-3">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                      <input class="form-check-input checkBox" type="checkbox" value="1" >
                       <label class="form-check-label" for="defaultCheck1">
                         Mon
                       </label>
@@ -767,7 +769,7 @@
 
                   <div class="col-md-3">
                     <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <input class="form-check-input checkBox" type="checkbox" value="2" >
                     <label class="form-check-label" for="defaultCheck1">
                       Tue
                     </label>
@@ -775,7 +777,7 @@
                   </div>
                   <div class="col-md-3">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                      <input class="form-check-input checkBox" type="checkbox" value="3" >
                       <label class="form-check-label" for="defaultCheck1">
                         Wed
                       </label>
@@ -783,7 +785,7 @@
                   </div>
                   <div class="col-md-3">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                      <input class="form-check-input checkBox" type="checkbox" value="4">
                       <label class="form-check-label" for="defaultCheck1">
                        Thu
                       </label>
@@ -791,7 +793,7 @@
                   </div>
                   <div class="col-md-3">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                      <input class="form-check-input checkBox" type="checkbox" value="5" >
                       <label class="form-check-label" for="defaultCheck1">
                        Fri
                       </label>
@@ -799,7 +801,7 @@
                   </div>
                   <div class="col-md-3">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                      <input class="form-check-input checkBox" type="checkbox" value="6" >
                       <label class="form-check-label" for="defaultCheck1">
                        Sat
                       </label>
@@ -815,19 +817,19 @@
               </div>
 
               <div class="tab-pane fade" id="tab-3" role="tabpanel">
-                <div class="input-group mb-3" style="width: 270px;">
+                <div class="input-group mb-3" style="width: 320px;">
                   <span class="input-group-text">Repeat every</span>
-                  <input type="tel" class="form-control" style="border:1px solid black;"  placeholder="1" > 
-                  <span class="input-group-text">Month(s) </span>on the
+                  <input type="tel" class="form-control interval" style="border:1px solid black;"  placeholder="1" > 
+                  <span class="input-group-text">month(s) on the</span>
                 </div>
                   
                 <div class="card text-secondary border-secondary">
                   <div class="card-body">
                     <div class="form-check">
-                      <input class="form-check-input  mt-3" type="checkbox" value="" id="defaultCheck1">
+                      <input class="form-check-input  mt-3" type="radio" name="monthly"  id="monthly1CheckRadio">
                       <label class="form-check-label" for="defaultCheck1">
                         <div class="form-group mb-md-0">
-                          <select class="selectpicker">
+                          <select class="selectpicker" id="monthly1">
                             <option value="1">First</option><option value="2">Second</option><option value="3">Third</option><option value="4">Fourth</option><option value="5">Fifth</option><option value="6">Sixth</option><option value="7">Seventh</option><option value="8">Eighth</option><option value="9">Ninth</option><option value="10">Tenth</option><option value="11">Eleventh</option><option value="12">Twelfth</option><option value="13">Thirteenth</option><option value="14">Fourteenth</option><option value="15">Fifteenth</option><option value="16">Sixteenth</option><option value="17">Seventeenth</option><option value="18">Eighteenth</option><option value="19">Nineteenth</option><option value="20">Twentieth</option><option value="21">Twenty-first</option><option value="22">Twenty-second</option><option value="23">Twenty-third</option><option value="24">Twenty-fourth</option><option value="25">Twenty-fifth</option><option value="26">Twenty-sixth</option><option value="27">Twenty-seventh</option><option value="28">Twenty-eighth</option><option value="29">Twenty-ninth</option><option value="30">Thirtieth</option><option value="31">Thirty-first</option><option value="-1">Last</option><option value="-2">Penultimate</option><option value="-3">Third to last</option><option value="-4">Fourth to last</option><option value="-5">Fifth to last</option><option value="-6">Sixth to last</option><option value="-7">Seventh to last</option><option value="-8">Eighth to last</option><option value="-9">Ninth to last</option><option value="-10">Tenth to last</option><option value="-11">Eleventh to last</option><option value="-12">Twelfth to last</option><option value="-13">Thirteenth to last</option><option value="-14">Fourteenth to last</option><option value="-15">Fifteenth to last</option><option value="-16">Sixteenth to last</option><option value="-17">Seventeenth to last</option><option value="-18">Eighteenth to last</option><option value="-19">Nineteenth to last</option><option value="-20">Twentieth to last</option><option value="-21">Twenty-first to last</option><option value="-22">Twenty-second to last</option><option value="-23">Twenty-third to last</option><option value="-24">Twenty-fourth to last</option><option value="-25">Twenty-fifth to last</option><option value="-26">Twenty-sixth to last</option><option value="-27">Twenty-seventh to last</option><option value="-28">Twenty-eighth to last</option><option value="-29">Twenty-ninth to last</option><option value="-30">Thirtieth to last</option>
                           </select>
                         </div>
@@ -837,13 +839,15 @@
                     <div class="row">
                       <div class="col-12 col-md-6">
                         <div class="form-check">
-                          <input class="form-check-input  mt-3  " type="checkbox" value="" id="defaultCheck1">
+                          <input class="form-check-input  mt-3  " type="radio" name="monthly" id="monthly2CheckRadio"  value="2" >
                           <label class="form-check-label" for="defaultCheck1">
                             <div class="form-group mb-md-0">
-                              <select class="selectpicker">
-                                <option selected>Mustard</option>
-                                <option>Ketchup</option>
-                                <option>Barbecue</option>
+                              <select class="selectpicker" id="monthly2">
+                                <option value="1" selected="">First</option>
+                                <option value="2">Second</option>
+                                <option value="3">Third</option>
+                                <option value="4">Fourth</option>
+                                <option value="-1">Last</option>
                               </select>
                             </div>
                           </label>
@@ -853,10 +857,14 @@
                       <div class="col-12 col-md-6">
                       
                             <div class="form-group mb-md-0">
-                              <select class="selectpicker">
-                                <option selected>Mustard</option>
-                                <option>Ketchup</option>
-                                <option>Barbecue</option>
+                              <select class="selectpicker" id="monthly3">
+                                <option value="1" selected="">Sunday</option>
+                                <option value="2">Monday</option>
+                                <option value="3">Tuesday</option>
+                                <option value="4">Wednesday</option>
+                                <option value="5">Thursday</option>
+                                <option value="6">Friday</option>
+                                <option value="7">Saturday</option>
                               </select>
                             </div>
                       </div>
@@ -869,74 +877,81 @@
               </div>
 
               <div class="tab-pane fade" id="tab-4" role="tabpanel">
-                <div class="input-group mb-3" style="width: 270px;">
+                <div class="input-group mb-3" style="width: 310px;">
                   <span class="input-group-text">Repeat every</span>
-                  <input type="tel" class="form-control" style="border:1px solid black;"  placeholder="1" > 
-                  <span class="input-group-text">Year(s) </span>on the
+                  <input type="tel" class="form-control interval" style="border:1px solid black;"  placeholder="1" > 
+                  <span class="input-group-text">Year(s) on the</span>
                 </div>
                   
                 <div class="card text-secondary border-secondary">
                   <div class="card-body">
                     <div class="row">
-                      <div class="col-12 col-md-6">
-                        <div class="form-check">
-                          <input class="form-check-input mt-3" type="checkbox" value="" id="defaultCheck1">
-                          <label class="form-check-label" for="defaultCheck1">
-                            <div class="form-group mb-md-0">
-                              <select class="selectpicker">
-                                <option selected>Mustard</option>
-                                <option>Ketchup</option>
-                                <option>Barbecue</option>
-                              </select>
-                            </div>
-                          </label>
-                        </div>
-                      </div>
-          
-                      <div class="col-12 col-md-6">
-                            <div class="form-group mb-md-0">
-                              <select class="selectpicker">
-                                <option selected>Mustard</option>
-                                <option>Ketchup</option>
-                                <option>Barbecue</option>
-                              </select>
-                            </div>
-                      </div>
-                    </div>
 
-                    <div class="row">
-                      <div class="col-12 col-md-6">
+                      <div class="col-12 col-md-5">
                         <div class="form-check">
                           <input class="form-check-input mt-3" type="checkbox" value="" id="defaultCheck1">
                           <label class="form-check-label" for="defaultCheck1">
                             <div class="form-group mb-md-0">
                               <select class="selectpicker">
-                                <option selected>Mustard</option>
-                                <option>Ketchup</option>
-                                <option>Barbecue</option>
+                                <option value="1">First</option><option value="2">Second</option><option value="3">Third</option><option value="4">Fourth</option><option value="5">Fifth</option><option value="6">Sixth</option><option value="7">Seventh</option><option value="8">Eighth</option><option value="9">Ninth</option><option value="10">Tenth</option><option value="11">Eleventh</option><option value="12">Twelfth</option><option value="13">Thirteenth</option><option value="14">Fourteenth</option><option value="15">Fifteenth</option><option value="16">Sixteenth</option><option value="17">Seventeenth</option><option value="18">Eighteenth</option><option value="19">Nineteenth</option><option value="20">Twentieth</option><option value="21">Twenty-first</option><option value="22">Twenty-second</option><option value="23">Twenty-third</option><option value="24">Twenty-fourth</option><option value="25">Twenty-fifth</option><option value="26">Twenty-sixth</option><option value="27">Twenty-seventh</option><option value="28">Twenty-eighth</option><option value="29">Twenty-ninth</option><option value="30">Thirtieth</option><option value="31">Thirty-first</option><option value="-1">Last</option><option value="-2">Penultimate</option><option value="-3">Third to last</option><option value="-4">Fourth to last</option><option value="-5">Fifth to last</option><option value="-6">Sixth to last</option><option value="-7">Seventh to last</option><option value="-8">Eighth to last</option><option value="-9">Ninth to last</option><option value="-10">Tenth to last</option><option value="-11">Eleventh to last</option><option value="-12">Twelfth to last</option><option value="-13">Thirteenth to last</option><option value="-14">Fourteenth to last</option><option value="-15">Fifteenth to last</option><option value="-16">Sixteenth to last</option><option value="-17">Seventeenth to last</option><option value="-18">Eighteenth to last</option><option value="-19">Nineteenth to last</option><option value="-20">Twentieth to last</option><option value="-21">Twenty-first to last</option><option value="-22">Twenty-second to last</option><option value="-23">Twenty-third to last</option><option value="-24">Twenty-fourth to last</option><option value="-25">Twenty-fifth to last</option><option value="-26">Twenty-sixth to last</option><option value="-27">Twenty-seventh to last</option><option value="-28">Twenty-eighth to last</option><option value="-29">Twenty-ninth to last</option><option value="-30">Thirtieth to last</option>
+                              </select>
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="col-12 col-md-2">
+                        <div class="form-group mb-md-0">
+                          of
+                        </div>
+                      </div>
+                        
+                      <div class="col-12 col-md-5">
+                            <div class="form-group mb-md-0">
+                              <select class="selectpicker">
+                                <option value="1" selected="">January</option><option value="2">February</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">August</option><option value="9">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option>
+                              </select>
+                            </div>
+                      </div>
+
+                    </div>
+                
+                    <div class="row">
+                      <div class="col-12 col-md-5">
+                        <div class="form-check">
+                          <input class="form-check-input mt-3" type="checkbox" value="" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            <div class="form-group mb-md-0">
+                              <select class="selectpicker">
+                                <option value="1" selected="">First</option>
+                                <option value="2">Second</option>
+                                <option value="3">Third</option>
+                                <option value="4">Fourth</option>
+                                <option value="-1">Last</option>
                               </select>
                             </div>
                           </label>
                         </div>
                       </div>
           
-                      <div class="col-12 col-md-6">
+                      <div class="col-12 col-md-5">
                             <div class="form-group mb-md-0">
                               <select class="selectpicker">
-                                <option selected>Mustard</option>
-                                <option>Ketchup</option>
-                                <option>Barbecue</option>
+                                <option value="su" selected="">Sunday</option><option value="mo">Monday</option><option value="tu">Tuesday</option><option value="we">Wednesday</option><option value="th">Thursday</option><option value="fr">Friday</option><option value="sa">Saturday</option>
                               </select>
                             </div>
+                      </div>
+                      
+                      <div class="col-12 col-md-2">
+                        <div class="form-group mb-md-0">
+                         of
+                        </div>
                       </div>
 
                       <div class="col-12 col-md-6">
                         <div class="form-group mb-md-0">
                           <select class="selectpicker">
-                            <option selected>Mustard</option>
-                            <option>Ketchup</option>
-                            <option>Barbecue</option>
-                          </select>
+                            <option value="1" selected="">January</option><option value="2">February</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">August</option><option value="9">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select>
                         </div>
                       </div>
 
@@ -945,6 +960,7 @@
                 </div>
               
               </div>
+
             </div>
           </div>
         </div>
@@ -952,14 +968,15 @@
       <div class="modal-footer">
         <div class="actions">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-primary" id="saveData">Save changes</button>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 <!--end Recurring rule  -->
+
+
 
 <!-- Add patients modals -->
 <div class="modal fade" id="add-patient" tabindex="-1" role="dialog" aria-hidden="true">
@@ -1085,7 +1102,7 @@
 <script src="../assets/js/echarts-gl.min.js"></script>
 
 <script src="../assets/js/main.js"></script>
-
+<script src="../assets/js/schedule.js"></script>
 
 </body>
 </html>
