@@ -86,20 +86,6 @@
             </div>
           </div>
 
-          <div class="card">    
-            <div class="card-body">
-              <ul class="nav">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Instant Request</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Subscribe</a>
-                </li>
-               
-              </ul>
-            </div>
-          </div>
-
           <div class="app-actions">
             <div class="dropdown item">
               <button
@@ -326,15 +312,11 @@
                   </a>
                 </li>
                 <li class="menu-item ">
-                  <a class="item-link" href="instantRequest.html">
-                    <span class="link-text">Instant Request</span>
+                  <a class="item-link" href="Request.html">
+                    <span class="link-text">Request</span>
                   </a>
                 </li>
-                <li class="menu-item ">
-                  <a class="item-link" href="subscription.html">
-                    <span class="link-text">Subscription</span>
-                  </a>
-                </li>
+                
               </ul>
             </nav>
           </div>
@@ -405,7 +387,7 @@
                       <h5 class="mt-0 mb-1 text-center">No active security job</h5>
                       <div class="my-0 mx-auto" style="width: fit-content;">
                         <div class="button-box">
-                          <a href="subscription.html" class="btn btn-primary">Book now</a>
+                          <a href="Request.html" class="btn btn-primary">Book now</a>
                         </div>
                       </div>
                     </div>
@@ -419,8 +401,9 @@
 
           <div class="card mb-0">
             <div class="card-header">
-              Pending project
+              Pending job
             </div>
+            
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-hover">
@@ -433,30 +416,9 @@
                     <th scope="col">Actions</th>
                   </tr>
                   </thead>
-                  <tbody>
+                  <tbody id="PendingJob">
                     
-                  <tr>
-                    <td>
-                      <strong>Liam</strong>
-                    </td>
-                    <td>
-                      <div class="text-muted text-nowrap">10 Feb 2018</div>
-                    </td>
-                    <td>
-                      <div class="text-muted text-nowrap">30 Feb 2018</div>
-                    </td>
-                   
-                    <td>
-                      <div class="text-muted text-nowrap">$1000</div>
-                    </td>
-                    
-                    <td>
-                      <div class="actions">
-                        <button type="button" class="btn btn-outline-primary">pay</button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-12">view</button>
-                      </div>
-                    </td>
-                  </tr>
+                 
                  
                   </tbody>
                 </table>
@@ -477,54 +439,15 @@
                     <th scope="col">Date</th>
                     <th scope="col">Amount</th>
                     <th scope="col">Description</th>
+                    <th scope="col">status</th>
                     <th scope="col">Id</th>
                   </tr>
                   </thead>
-                  <tbody>
-                  <tr>
-                    <td><strong>Liam Jouns</strong></td>
-                    <td><div class="text-nowrap text-muted">18 Dec 2019</div></td>
-                    <td><strong class="text-nowrap">$20000</strong></td>
-                    <td>For security</td>
-                    <td>2222399dd</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Liam Jouns</strong></td>
-                    <td><div class="text-nowrap text-muted">18 Dec 2019</div></td>
-                    <td><strong class="text-nowrap">$20000</strong></td>
-                    <td>For security</td>
-                    <td>2222399dd</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Liam Jouns</strong></td>
-                    <td><div class="text-nowrap text-muted">18 Dec 2019</div></td>
-                    <td><strong class="text-nowrap">$20000</strong></td>
-                    <td>For security</td>
-                    <td>2222399dd</td>
-                  </tr>
-                 
-                
+                  <tbody id="transaction">
+              
                   </tbody>
                 </table>
               </div>
-
-              <nav class="mt-4">
-                <ul class="pagination">
-                  <li class="page-item disabled">
-                    <a class="page-link" href="#" aria-label="Previous" tabindex="-1" aria-disabled="true">
-                      <span class="icofont-simple-left"></span>
-                    </a>
-                  </li>
-                  <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                      <span class="icofont-simple-right"></span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
             </div>
           </div>
         </div>
@@ -590,7 +513,7 @@
 
 
 <!--start Job  -->
-<div class="modal fade" id="modal-12" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="modal-1" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
@@ -598,51 +521,172 @@
       </button>
 
       <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
+        <h5 class="modal-title">Job detail</h5>
       </div>
       <div class="modal-body">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis ea error exercitationem
-          officiis pariatur ratione ullam! Asperiores nisi quos repudiandae?</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur magnam tempore vel!
-          Deserunt dolor ea, eaque expedita in ipsam itaque modi molestias necessitatibus neque nesciunt
-          non placeat quis rem rerum saepe vero. Doloremque earum obcaecati quis sed soluta, vero
-          voluptas.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, architecto aspernatur autem
-          consectetur culpa cum cumque deserunt dolore eius eveniet excepturi expedita fugit id in
-          incidunt ipsa ipsam labore minus molestiae neque nisi nobis non perferendis porro possimus quis
-          quisquam quos ratione, sapiente tempore ullam vel vitae voluptatibus? Aliquam aut dolorum earum
-          fuga laudantium, minus, mollitia possimus provident quis velit vitae voluptatibus! Asperiores at
-          consequuntur, exercitationem expedita illo ipsum magnam mollitia, necessitatibus, nemo non nulla
-          quibusdam quo repudiandae sapiente similique tempore totam! Aliquam commodi cumque, ducimus, est
-          ipsam perferendis quam quidem quo quod sint suscipit totam voluptates voluptatibus.
-          Exercitationem, neque.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur distinctio doloremque,
-          enim ex facere incidunt maiores minima nostrum odit pariatur quaerat quisquam sint suscipit,
-          vero voluptate! Cupiditate dicta doloremque doloribus, ducimus eligendi error exercitationem
-          impedit ipsa iusto labore natus non odit omnis repudiandae, tempore veritatis voluptas.
-          Cupiditate eligendi eum excepturi itaque, laudantium magni minus molestiae mollitia possimus,
-          quam quo rerum similique, totam voluptatem voluptates. Adipisci dicta expedita facilis fugiat,
-          ipsam nam nulla pariatur perspiciatis, possimus quos, tempora voluptas voluptatibus! Accusantium
-          architecto cupiditate dignissimos facere maxime repellat rerum totam ullam voluptate. Aliquam
-          consectetur reiciendis reprehenderit sit veritatis. Dignissimos excepturi, fugit nostrum quaerat
-          reiciendis saepe voluptatem. Ad animi asperiores blanditiis dolores eaque enim eveniet fugiat
-          hic illum libero maxime minima minus odio odit officia, officiis praesentium quibusdam quisquam
-          rem saepe sapiente sequi suscipit? Alias at dignissimos distinctio doloribus expedita, facilis
-          iure labore, nesciunt nobis numquam odit optio pariatur provident quaerat, quibusdam sint soluta
-          tempora tenetur. Aperiam assumenda aut, blanditiis consequatur culpa dolore eligendi eos esse
-          est fuga harum in ipsum laborum maiores nam nihil nulla perspiciatis quasi quisquam repellat sit
-          soluta sunt suscipit totam voluptatem? Accusantium asperiores blanditiis debitis deleniti dolor
-          dolore eius ut voluptas. Aliquam amet excepturi illo magnam officia quod!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aperiam incidunt praesentium
-          sed? Ad aliquid beatae, corporis culpa cumque deleniti deserunt dignissimos distinctio dolorem
-          dolores ducimus eum fugiat incidunt, inventore ipsam iste labore magni necessitatibus neque
-          nesciunt omnis optio repudiandae sapiente similique ullam veritatis voluptas voluptatum. Facilis
-          ipsa laborum praesentium.</p>
+        <main class="main-content mb-0">
+          <div class="app-loader"><i class="icofont-spinner-alt-4 rotate"></i></div>
+    
+          
+          <div class="main-content-wrap">
+            
+            <header class="page-header" style="clear: right;">
+              <h1 class="page-title"  style="clear: both;">san Building</h1>
+            </header>
+            
+            <div class="page-content">
+    
+    
+              <!-- START PROJECT LOCATION -->
+              <figure>
+                <figcaption class="blockquote-footer">
+                  <div class="card mb-md-0">
+                    <div class="card-body">
+                  
+                      <div class="row align-items-center">
+                        <div class="col col-auto">
+                          <div class="icon icofont-location-pin fs-30 text-muted"></div>
+                        </div>
+                        <div class="col">
+                          <div>Job Address</div>
+                          71 Pilgrim Avenue Chevy Chase, MD 20815
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+              <button class="btn btn-outline-info  w-100" data-bs-toggle="modal" data-bs-target="#modal-2">
+                Load Map
+                <div class="icon icofont-map-pins"></div>
+              </button>
+              <hr>
+              <!-- END PROJECT LOCATION -->
+    
+              <div class="card mb-0">
+               
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-bordered">
+                      <thead id="costHead">
+                     
+                      </thead>
+                      <tbody id="costBody">
+                    
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- START JOB SCHEDULE -->
+              <div class="card">
+                <div class="card-header mt-3">
+                    Job schedule
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-sm">
+                      <thead id="tableHead">
+                     
+                      </thead>
+                      <tbody id="tableBody">
+                     
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                </div>
+                
+                <div class="card-body">
+
+                  <div class="alert alert-light outline text-dark" role="alert">
+                    <div> Occasion: <strong> Event </strong></div>
+                    <div> Job Schedule : <strong> Instant </strong></div>
+                    </div>
+                </div>
+
+                <div class="table-responsive mb-3">
+                  <table class="table table-dark table-sm">
+                    <thead id="tableHead2">
+                      
+                    </thead>
+                      <tbody id="tableBody2">
+                       
+                      </tbody>
+                  </table>
+                </div>
+
+                  <div class="card text-secondary border-secondary">
+                    <div class="card-header">
+                      Special Instruction
+                    </div>
+                    <div class="card-body">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolore enim, nemo nihil non omnis temporibus? Blanditiis culpa labore velit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, provident?
+                    </div>
+                  </div>
+          
+              
+                  <div class="card text-secondary border-secondary">
+                    <div class="card-header">
+                      Special Task
+                    </div>
+                    <div class="card-body" >
+                      <ul class="list-group" id="specialTaskBody">
+                        
+                      </ul>
+                    </div>
+                 </div>
+              </div>
+              <!-- END JOB SCHEDULE -->
+    
+              <!-- END PROJECT EVENT -->
+    
+
+    
+            </div>
+  
+          </div>
+        </main>
+    
       </div>
+
+
+      <div class="modal fade" id="modal-2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+              <i class="icofont-close-line"></i>
+            </button>
+  
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+            </div>
+            <div class="modal-body">
+  
+  
+              <div class="main-content-wrap full-filled">
+                <div class="page-content">
+                  <div id="google-map" class="map"></div>
+                </div>
+              </div>
+  
+  
+            </div>
+            <div class="modal-footer">
+              <div class="actions">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">refresh </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
       <div class="modal-footer">
         <div class="actions">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
@@ -775,7 +819,37 @@
 
 <script src="../assets/js/main.js"></script>
 
+<script>
 
+  let jobDetails={
+    jobStatus:"pending",
+    jobType:"instant",
+    data:""
+  }
+  let jobDetails2={
+    jobStatus:"pending",
+    jobType:"subscription",
+    subscriptionType:"daily",
+  }
+
+  let data=[1,2];
+  let data2=[1,3,2,3];
+  let data3="instant";
+  let data4="Periodic";
+  addTableTrs("#PendingJob","pendingJob",data)
+  addTableTrs("#transaction","transaction1",data2)
+
+  if(data3="pendingDetails"){
+    add("#tableHead","#tableBody","pendingDetails","subscription","#specialTaskBody",data2,"#tableHead2","#tableBody2",data4,data2)
+    jobAmount("#costHead","#costBody","jobCost",data2)
+  }
+  else{
+  // addTableTrs2("#tableHead","#tableBody","pendingDetails","subscription",data2)
+  //jobAmount("#costHead","#costBody","jobCost",data2)
+  }
+
+  
+</script>
 </body>
 </html>
 

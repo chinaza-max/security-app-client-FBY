@@ -86,21 +86,6 @@
             </div>
           </div>
 
-          <div class="card">    
-            <div class="card-body">
-              <ul class="nav">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Instant Request</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Subscribe</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Affiliate</a>
-                </li>
-              </ul>
-            </div>
-          </div>
         
           <div class="app-actions">
             <div class="dropdown item">
@@ -313,12 +298,12 @@
             <nav class="main-menu-wrap">
               <ul class="menu-ul">
                 <li class="menu-item">
-                  <a class="item-link" href="#">
+                  <a class="item-link" href="index.html">
                     <span class="link-text">Dashboard</span>
                   </a>
                 </li>
                 <li class="menu-item active">
-                  <a class="item-link" href="project.html">
+                  <a class="item-link" href="#">
                     <span class="link-text">Project</span>
                   </a>
                 </li>
@@ -328,15 +313,11 @@
                   </a>
                 </li>
                 <li class="menu-item ">
-                  <a class="item-link" href="instantRequest.html">
-                    <span class="link-text">Instant Request</span>
+                  <a class="item-link" href="Request.html">
+                    <span class="link-text">Request</span>
                   </a>
                 </li>
-                <li class="menu-item ">
-                  <a class="item-link" href="subscription.html">
-                    <span class="link-text">Subscription</span>
-                  </a>
-                </li>
+             
               </ul>
             </nav>
           </div>
@@ -416,11 +397,6 @@
               </ul>
               <div class="tab-content">
 
-
-
-
-
-
                 <div class="tab-pane fade show active" id="tab-7" role="tabpanel">
                   <div class="card mb-0">
                     <div class="card-header">
@@ -437,28 +413,8 @@
                             <th scope="col">Actions</th>
                           </tr>
                           </thead>
-                          <tbody>
+                          <tbody id="activeJob">
                             
-                          <tr>
-                            <td>
-                              <strong>Liam</strong>
-                            </td>
-                            <td>
-                              <div class="text-muted text-nowrap">10 Feb 2018</div>
-                            </td>
-                           
-                            <td>
-                              <div class="text-muted text-nowrap">$1000</div>
-                            </td>
-                            
-                            <td>
-                              <div class="actions">
-                                <button type="button" class="btn btn-outline-primary">pay</button>
-                                <button type="button" class="btn btn-primary">view</button>
-                              </div>
-                            </td>
-                          </tr>
-                         
                           </tbody>
                         </table>
                       </div>
@@ -485,29 +441,7 @@
                             <th scope="col">Actions</th>
                           </tr>
                           </thead>
-                          <tbody>
-                            
-                          <tr>
-                            <td>
-                              <strong>Liam</strong>
-                            </td>
-                            <td>
-                              <div class="text-muted text-nowrap">10 Feb 2018</div>
-                            </td>
-                            <td>
-                              <div class="text-muted text-nowrap">30 Feb 2018</div>
-                            </td>
-                            <td>
-                              <div class="text-muted text-nowrap">$1000</div>
-                            </td>
-                            
-                            <td>
-                              <div class="actions">
-                                <button type="button" class="btn btn-outline-primary">pay</button>
-                                <button type="button" class="btn btn-primary">view</button>
-                              </div>
-                            </td>
-                          </tr>
+                          <tbody id="PendingJob">
                          
                           </tbody>
                         </table>
@@ -518,7 +452,7 @@
                 <div class="tab-pane fade" id="tab-9" role="tabpanel">
                   <div class="card mb-0">
                     <div class="card-header">
-                      Pending project
+                      Completed project
                     </div>
                     <div class="card-body">
                       <div class="table-responsive">
@@ -531,27 +465,8 @@
                             <th scope="col">Actions</th>
                           </tr>
                           </thead>
-                          <tbody>
-                            
-                          <tr>
-                            <td>
-                              <strong>Liam</strong>
-                            </td>
-                            <td>
-                              <div class="text-muted text-nowrap">10 Feb 2018</div>
-                            </td>
+                          <tbody id="completedJob">
                            
-                            <td>
-                              <div class="text-muted text-nowrap">$1000</div>
-                            </td>
-                            
-                            <td>
-                              <div class="actions">
-                                <button type="button" class="btn btn-primary">view</button>
-                              </div>
-                            </td>
-                          </tr>
-                         
                           </tbody>
                         </table>
                       </div>
@@ -626,6 +541,323 @@
 
   </div>
 </div>
+
+
+<!--start Job  -->
+<div class="modal fade" id="modal-1" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+        <i class="icofont-close-line"></i>
+      </button>
+
+      <div class="modal-header">
+        <h5 class="modal-title">Job detail</h5>
+      </div>
+      <div class="modal-body">
+        <main class="main-content mb-0">
+          <div class="app-loader"><i class="icofont-spinner-alt-4 rotate"></i></div>
+    
+          
+          <div class="main-content-wrap">
+            <div class="add-action-box" onclick="smoothScroll(document.getElementById('chatContainer'))">
+              <button class="btn btn-primary rounded-0 btn-sm" data-bs-toggle="modal" data-bs-target="#modal-2" >
+                <span style="font-size:15px ;">Report</span>
+                <span class="badge badge-danger badge-sm">5</span>
+              </button>
+            </div>
+            
+            <header class="page-header" style="clear: right;">
+              <h1 class="page-title"  style="clear: both;">san Building</h1>
+            </header>
+            
+            <div class="page-content">
+    
+    
+              <!-- START PROJECT LOCATION -->
+              <figure>
+                <figcaption class="blockquote-footer">
+                  <div class="card mb-md-0">
+                    <div class="card-body">
+                  
+                      <div class="row align-items-center">
+                        <div class="col col-auto">
+                          <div class="icon icofont-location-pin fs-30 text-muted"></div>
+                        </div>
+                        <div class="col">
+                          <div>Job Address</div>
+                          71 Pilgrim Avenue Chevy Chase, MD 20815
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+              <button class="btn btn-outline-info  w-100" data-bs-toggle="modal" data-bs-target="#modal-2">
+                Load Map
+                <div class="icon icofont-map-pins"></div>
+              </button>
+              <hr>
+              <!-- END PROJECT LOCATION -->
+    
+              <div class="card mb-0">
+               
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-bordered">
+                      <thead id="costHead">
+                     
+                      </thead>
+                      <tbody id="costBody">
+                    
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- START JOB SCHEDULE -->
+              <div class="card">
+                <div class="card-header mt-3">
+                    Job schedule
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-sm">
+                      <thead id="tableHead">
+                     
+                      </thead>
+                      <tbody id="tableBody">
+                     
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                </div>
+                
+                <div class="card-body">
+
+                  <div class="alert alert-light outline text-dark" role="alert">
+                    <div> Occasion: <strong> Event </strong></div>
+                    <div> Job Schedule : <strong> Instant </strong></div>
+                    </div>
+                </div>
+
+                <div class="table-responsive mb-3">
+                  <table class="table table-dark table-sm">
+                    <thead id="tableHead2">
+                      
+                    </thead>
+                      <tbody id="tableBody2">
+                       
+                      </tbody>
+                  </table>
+                </div>
+
+                  <div class="card text-secondary border-secondary">
+                    <div class="card-header">
+                      Special Instruction
+                    </div>
+                    <div class="card-body">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolore enim, nemo nihil non omnis temporibus? Blanditiis culpa labore velit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, provident?
+                    </div>
+                  </div>
+          
+              
+                  <div class="card text-secondary border-secondary">
+                    <div class="card-header">
+                      Special Task
+                    </div>
+                    <div class="card-body" >
+                      <ul class="list-group" id="specialTaskBody">
+                        
+                      </ul>
+                    </div>
+                 </div>
+              </div>
+              <!-- END JOB SCHEDULE -->
+    
+              <!-- END PROJECT EVENT -->
+    
+
+    
+            </div>
+  
+          </div>
+        </main>
+    
+      </div>
+
+
+      <div class="modal fade" id="modal-2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+              <i class="icofont-close-line"></i>
+            </button>
+  
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+            </div>
+            <div class="modal-body">
+  
+  
+              <div class="main-content-wrap full-filled">
+                <div class="page-content">
+                  <div id="google-map" class="map"></div>
+                </div>
+              </div>
+  
+  
+            </div>
+            <div class="modal-footer">
+              <div class="actions">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">refresh </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <div class="actions">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end Job  -->
+
+<!--start chat -->
+<div class="modal fade" id="modal-2" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+        <i class="icofont-close-line"></i>
+      </button>
+
+      <div class="modal-header">
+        <h5 class="modal-title">Report issues</h5>
+      </div>
+      <div class="modal-body" id="modal-bodyID">
+        <div id="chatContainer">
+          <div class="app">
+          
+            <div class="wrapper">
+              <div class="chat-area" id="chat-areaId">
+             
+                <div class="chat-area-main">
+                  <div class="chat-msg">
+                    <div class="chat-msg-profile">
+                      <img class="chat-msg-img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%283%29+%281%29.png" alt="" />
+                      <div class="chat-msg-date">Message seen 1.22pm</div>
+                    </div>
+                    <div class="chat-msg-content">
+                      <div class="chat-msg-text">Luctus et ultrices posuere cubilia curae.</div>
+                      <div class="chat-msg-text">
+                        <img src="https://media0.giphy.com/media/yYSSBtDgbbRzq/giphy.gif?cid=ecf05e47344fb5d835f832a976d1007c241548cc4eea4e7e&rid=giphy.gif" />
+                      </div>
+                      <div class="chat-msg-text">Neque gravida in fermentum et sollicitudin ac orci phasellus egestas. Pretium lectus quam id leo.</div>
+                    </div>
+                  </div>
+
+                  <div class="chat-msg owner">
+                    <div class="chat-msg-profile">
+                      <img class="chat-msg-img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%281%29.png" alt="" />
+                      <div class="chat-msg-date">Message seen 1.22pm</div>
+                    </div>
+                    <div class="chat-msg-content">
+                      <div class="chat-msg-text">Sit amet risus nullam eget felis eget. Dolor sed viverra ipsum😂😂😂</div>
+                      <div class="chat-msg-text">Cras mollis nec arcu malesuada tincidunt.</div>
+                    </div>
+                  </div>
+
+                  <div class="chat-msg">
+                    <div class="chat-msg-profile">
+                      <img class="chat-msg-img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%282%29.png" alt="">
+                      <div class="chat-msg-date">Message seen 2.45pm</div>
+                    </div>
+                    <div class="chat-msg-content">
+                      <div class="chat-msg-text">Aenean tristique maximus tortor non tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae😊</div>
+                      <div class="chat-msg-text">Ut faucibus pulvinar elementum integer enim neque volutpat.</div>
+                    </div>
+                  </div>
+                  <div class="chat-msg owner">
+                    <div class="chat-msg-profile">
+                      <img class="chat-msg-img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%281%29.png" alt="" />
+                      <div class="chat-msg-date">Message seen 2.50pm</div>
+                    </div>
+                    <div class="chat-msg-content">
+                      <div class="chat-msg-text">posuere eget augue sodales, aliquet posuere eros.</div>
+                      <div class="chat-msg-text">Cras mollis nec arcu malesuada tincidunt.</div>
+                    </div>
+                  </div>
+                  <div class="chat-msg">
+                    <div class="chat-msg-profile">
+                      <img class="chat-msg-img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%2812%29.png" alt="" />
+                      <div class="chat-msg-date">Message seen 3.16pm</div>
+                    </div>
+                    <div class="chat-msg-content">
+                      <div class="chat-msg-text">Egestas tellus rutrum tellus pellentesque</div>
+                    </div>
+                  </div>
+                  <div class="chat-msg">
+                    <div class="chat-msg-profile">
+                      <img class="chat-msg-img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%283%29+%281%29.png" alt="" class="account-profile" alt="">
+                      <div class="chat-msg-date">Message seen 3.16pm</div>
+                    </div>
+                    <div class="chat-msg-content">
+                      <div class="chat-msg-text">Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et.</div>
+                    </div>
+                  </div>
+                  <div class="chat-msg owner">
+                    <div class="chat-msg-profile">
+                      <img class="chat-msg-img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%281%29.png" alt="" />
+                      <div class="chat-msg-date">Message seen 2.50pm</div>
+                    </div>
+                    <div class="chat-msg-content">
+                      <div class="chat-msg-text">Tincidunt arcu non sodales😂</div>
+                    </div>
+                  </div>
+                  <div class="chat-msg">
+                    <div class="chat-msg-profile">
+                      <img class="chat-msg-img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%282%29.png" alt="">
+                      <div class="chat-msg-date">Message seen 3.16pm</div>
+                    </div>
+                    <div class="chat-msg-content">
+                      <div class="chat-msg-text">Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et🥰</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="chat-area-footer">
+                     
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-paperclip">
+                    <path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48" />
+                  </svg>
+                  <input type="text" placeholder="Type something here..." />
+                 
+                  <div class="icon icofont-hand-drawn-alt-right"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer" >
+        <h6 style="margin-right:72%">san building</h6>
+        <div class="actions">
+          
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ <!--end chat -->
+
 
 <!-- Add patients modals -->
 <div class="modal fade" id="add-patient" tabindex="-1" role="dialog" aria-hidden="true">
@@ -752,6 +984,35 @@
 
 <script src="../assets/js/main.js"></script>
 
+
+<script>
+  
+//pending active or completed;
+  let jobStatus="active"
+
+  let data=[1,2];
+  let data2=[1,3,2,3];
+  let data3="instant";
+  let data4="Periodic";
+  addTableTrs("#activeJob","activeJob",data)
+  addTableTrs("#PendingJob","pendingJob",data)
+  addTableTrs("#completedJob","completedJob",data)
+
+  if(jobStatus=="active"){
+
+    if(data3="pendingDetails"){
+    add("#tableHead","#tableBody","pendingDetails","subscription","#specialTaskBody",data2,"#tableHead2","#tableBody2",data4,data2)
+    jobAmount("#costHead","#costBody","jobCost",data2)
+    }
+    else if(data3="pendingDetails"){
+    // addTableTrs2("#tableHead","#tableBody","pendingDetails","subscription",data2)
+    //jobAmount("#costHead","#costBody","jobCost",data2)
+    }
+
+  }
+  
+ 
+</script>
 
 </body>
 </html>

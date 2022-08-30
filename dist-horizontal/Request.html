@@ -22,6 +22,9 @@
   <link rel="stylesheet" href="../assets/css/morris.css">
   <link rel="stylesheet" href="../assets/css/leaflet.css">
 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <!-- Theme CSS -->
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
@@ -83,20 +86,6 @@
                 </g>
               </svg>
               <!-- end SVG logo -->
-            </div>
-          </div>
-
-          <div class="card">    
-            <div class="card-body">
-              <ul class="nav">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Instant Request</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Subscribe</a>
-                </li>
-               
-              </ul>
             </div>
           </div>
 
@@ -327,14 +316,10 @@
                 </li>
                 <li class="menu-item active ">
                   <a class="item-link" href="#">
-                    <span class="link-text">Instant Request</span>
+                    <span class="link-text">Request</span>
                   </a>
                 </li>
-                <li class="menu-item ">
-                  <a class="item-link" href="subscription.html">
-                    <span class="link-text">Subscribe</span>
-                  </a>
-                </li>
+             
               </ul>
             </nav>
           </div>
@@ -404,11 +389,6 @@
                     <label>Title</label>
                     <input class="form-control" type="text" placeholder="add any title for your request" >
                   </div>
-  
-                  <div class="form-group">
-                    <label>Address</label>
-                    <input class="form-control" type="text" placeholder="enter address for " value="Jouns">
-                  </div>
                   
                   <div class="form-group">
                     <label>Occasion</label>
@@ -426,7 +406,7 @@
                   <div class="form-group">
                     <label>Job Schedule</label>
                     <select class="selectpicker" id="jobType">
-                      <option value="Instant" selected>Instant/one-off</option>
+                      <option value="Instant" selected>Instant/One-off</option>
                       <option value="Subscription">Subscription</option>
                     </select>
                   </div>
@@ -444,22 +424,12 @@
                             <input class="form-control" type="date" >
                         </div>
                         </div>
-                        <div class="col-12 col-sm-6">
-                            <div class="form-group">
-                            <label>Start time </label>
-                            <input class="form-control" type="time" >
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6">
-                            <div class="form-group">
-                            <label>End time</label>
-                            <input class="form-control" type="time" >
-                            </div>
-                        </div>
+                        
                     </div>
+                  
 
                     <div class="form-group instantItem2">
-                        <label>Start date </label>
+                        <label>Date </label>
                         <input class="form-control" type="date" >
                     </div>
                     
@@ -480,16 +450,17 @@
                     
                     <div class="form-group subscribtionItem2">
                         <label>Subscription type</label>
-                        <select class="selectpicker" id="jobType">
+                        <select class="selectpicker" id="subscriptionType">
                           <option value="Daily" selected>Daily</option>
                           <option value="Periodic">Periodic</option>
+                          <option value="manually">Manually Select specific dates with time</option>
                         </select>
                     </div>
 
                    
 
-                    <div class="form-group"  data-bs-toggle="modal" data-bs-target="#modal-1">
-                      <label>Phone number</label>
+                    <div class="form-group subscribtionItem2" id="Recurring" onMouseOver="this.style.cursor='pointer'" data-bs-toggle="modal" data-bs-target="#modal-1">
+                      <label>Set schedule</label>
                       <div class="card">
                         <div class="card-body">
                           <div class="alert alert-secondary with-before-icon" role="alert">
@@ -500,79 +471,124 @@
                       </div>
                     </div>
 
-    
+                    <div class="form-group">
+                     
+                      <div class="addMultipleItem" id="manually" >
+                        <label>Set manually schedule</label>
+                        <div class="container-fluid px-0 px-sm-4 py-0 mx-auto">
+                          <div class="row d-flex justify-content-center">
+                              <div class="col-md-12 col-lg-12 col-xl-12">
+                                  <div class="card border-0">
+                                      <div class="row px-3">
+                                          <div class="col-sm-2"> <label class="text-grey mt-1 mb-3">Select date</label> </div>
+                                          <div class="col-sm-10 list">
+                                              <div class="mb-2 row justify-content-between px-3"> 
+                                                  <input class="mb-2 mob" style="max-width:130px;" type="date" >
+                                                  <div class="mob" style="max-width:180px;" > <label class="text-grey mr-1">From</label> <input class="ml-1" type="time" name="from"> </div>
+                                                  <div class="mob mb-2" style="max-width:180px;"> <label class="text-grey mr-4">To</label> <input class="ml-1" type="time" name="to"> </div>
+                                                  <div class="mt-1 cancel fa fa-times text-danger" style="max-width:15px;"></div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="row px-3 mt-3">
+                                          <div class="col-sm-2"></div>
+                                          <div class="col-sm-10">
+                                              <div class="row px-3">
+                                                  <div class="fa fa-plus-circle text-secondary add" style="max-width:20px;"></div>
+                                                  <p class="text-secondary ml-3 add" style="max-width:50px;">Add</p>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row subscribtionItem">    
+                    
+                      <div class="col-12 col-sm-6">
+                          <div class="form-group">
+                          <label>Start time </label>
+                          <input class="form-control" type="time" >
+                          </div>
+                      </div>
+                      <div class="col-12 col-sm-6">
+                          <div class="form-group">
+                          <label>End time</label>
+                          <input class="form-control" type="time" >
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label>Special Instruction<span class="badge badge-secondary badge-inside">Optional</span></label>
+                      <textarea class="form-control" placeholder="Address" rows="3">71 Pilgrim Avenue Chevy Chase, MD 20815</textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="addMultipleItem" id="task">
+                        <label>Special Task<span class="badge badge-secondary badge-inside">Optional</span></label>
+                        <div class="container-fluid px-0 px-sm-4 py-0 mx-auto">
+                          <div class="row d-flex justify-content-center">
+                              <div class="col-md-12 col-lg-12 col-xl-12">
+                                  <div class="card border-0">
+                                      <div class="row px-3">
+                                          <div class="col-sm-2"> <label class="text-grey mt-1 mb-3">Enter task</label> </div>
+                                          <div class="col-sm-10 list2">
+                                              <div class="mb-2 row justify-content-between px-3"> 
+                                                  <input class="mb-2 mob" style="max-width:90%;" type="text" placeholder="special tasks">
+                                                  
+                                                  <div class="mt-1 cancel fa fa-times text-danger" style="max-width:15px;"></div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="row px-3 mt-3">
+                                          <div class="col-sm-2"></div>
+                                          <div class="col-sm-10">
+                                              <div class="row px-3">
+                                                  <div class="fa fa-plus-circle text-secondary add2" style="max-width:20px;"></div>
+                                                  <p class="text-secondary ml-3 add2" style="max-width:50px;">Add</p>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                   <div class="form-group">
                     <label>Phone number</label>
                     <input class="form-control" type="number" placeholder="Age" value="0126596578">
                   </div>
   
+
+                  
                   <div class="form-group">
                     <label>Address</label>
                     <textarea class="form-control" placeholder="Address" rows="3">71 Pilgrim Avenue Chevy Chase, MD 20815</textarea>
                   </div>
-  
-                  <div class="form-group">
-                    <label>Last visit</label>
-                    <input class="form-control" type="text" placeholder="Last visit" value="18 Dec 2019" readonly>
-                  </div>
-  
-                  <div class="form-group">
-                    <label>Status</label>
-                    <select class="selectpicker" title="Status">
-                      <option selected>Approved</option>
-                      <option>Pending</option>
-                    </select>
-                  </div>
-  
-                  <div class="row">
-                    <div class="col">
-                      <button type="button" class="btn btn-success">Save changes</button>
-                    </div>
-                    <div class="col text-end">
-                      <button type="button" class="btn btn-outline-danger">
-                        <span class="d-none d-sm-block">Delete account</span>
-                        <span class="d-sm-none">Delete</span>
-                      </button>
-                    </div>
-                  </div>
+                 
                 </form>
   
-                <hr>
-  
-                <h4>Change password</h4>
-  
-                <form>
-                  <div class="row">
-                    <div class="col-12 col-sm-6">
-                      <div class="form-group">
-                        <label>Current password</label>
-                        <input class="form-control" type="text" placeholder="Current password">
-                      </div>
-                    </div>
+                <div class="row">
+                  <div class="col text-center">
+                    <button class="btn btn-primary w-100">Request qoute</button>
                   </div>
-                  <div class="row">
-                    <div class="col-12 col-sm-6">
-                      <div class="form-group">
-                        <label>New password</label>
-                        <input class="form-control" type="text" placeholder="New password">
-                      </div>
-                    </div>
-  
-                    <div class="col-12 col-sm-6">
-                      <div class="form-group">
-                        <label>Confirm new password</label>
-                        <input class="form-control" type="text" placeholder="Confirm new password">
-                      </div>
-                    </div>
-                  </div>
-  
-                  <button type="button" class="btn btn-outline-dark">Change password</button>
-                </form>
+                </div>
+             
               </div>
             </div>
           </div>
       </div>
+      
     </main>
+    
+   
+   
 
     <div class="app-footer">
       <div class="footer-wrap">
@@ -1085,6 +1101,13 @@
   </div>
 </div>
 <!-- end Add patients modals -->
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
 
 
 <script src="../assets/js/jquery-3.6.0.min.js"></script>
